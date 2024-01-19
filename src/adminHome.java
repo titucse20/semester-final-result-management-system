@@ -102,13 +102,13 @@ public class adminHome extends javax.swing.JFrame {
                 .addGap(51, 51, 51))
         );
 
-        jLabel1.setText("Degree Name");
+        jLabel1.setText("Course Name");
 
         jLabel2.setText("Branch Name");
 
-        jLabel3.setText("Name");
+        jLabel3.setText("Roll Number");
 
-        jLabel4.setText("Student ID");
+        jLabel4.setText("Name");
 
         jLabel5.setText("Gender");
 
@@ -148,7 +148,7 @@ public class adminHome extends javax.swing.JFrame {
                                 .addComponent(jTextField1)
                                 .addComponent(jTextField2)
                                 .addComponent(jTextField3)))))
-                .addGap(0, 71, Short.MAX_VALUE))
+                .addGap(0, 59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +187,10 @@ public class adminHome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
