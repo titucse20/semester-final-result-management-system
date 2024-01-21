@@ -76,11 +76,26 @@ public class adminHome extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton3.setText("Registered Students");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setText("All Students Result");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Logout");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -116,9 +131,9 @@ public class adminHome extends javax.swing.JFrame {
                 .addGap(51, 51, 51))
         );
 
-        jLabel1.setText("Course Name");
+        jLabel1.setText("Class");
 
-        jLabel2.setText("Branch Name");
+        jLabel2.setText("Section");
 
         jLabel3.setText("Roll Number");
 
@@ -128,9 +143,9 @@ public class adminHome extends javax.swing.JFrame {
 
         jLabel6.setText("Fathers Name");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BSc ", "MSc ", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "One", "Two", "Three", "Four", "Five", " " }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CSE", "ECE ", "EEE" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D" }));
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male ", "Female", "None" }));
 
@@ -219,8 +234,8 @@ public class adminHome extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         
-        String course=(String)jComboBox1.getSelectedItem();
-        String branch=(String)jComboBox2.getSelectedItem();
+        String cls=(String)jComboBox1.getSelectedItem();
+        String sec=(String)jComboBox2.getSelectedItem();
         String rollNo=jTextField1.getText();
         String name=jTextField2.getText();
         String gender=(String)jComboBox3.getSelectedItem();
@@ -229,7 +244,7 @@ public class adminHome extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srm","root","M19980301@m");
             Statement st=con.createStatement();
-            st.executeUpdate("insert into student(course,branch,rollNo,name,gender,fatherName) values('"+course+"','"+branch+"','"+rollNo+"','"+name+"','"+gender+"','"+fatherName+"')");
+            st.executeUpdate("insert into student(cls,sec,rollNo,name,gender,fatherName) values('"+cls+"','"+sec+"','"+rollNo+"','"+name+"','"+gender+"','"+fatherName+"')");
             JOptionPane.showMessageDialog(null, "Successfully Updated");
             setVisible(false);
             new adminHome().setVisible(true);
@@ -244,6 +259,7 @@ public class adminHome extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         setVisible(false);
@@ -255,6 +271,24 @@ public class adminHome extends javax.swing.JFrame {
         setVisible(false);
         new adminHome().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new registeredStudent().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new allStudentResult().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new index().setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
